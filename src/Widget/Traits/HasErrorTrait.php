@@ -1,7 +1,7 @@
 <?php
-namespace Sirius\Forms\Widget\Traits;
+namespace Sirius\FormsRenderer\Widget\Traits;
 
-use Sirius\Forms\Html\ExtendedTag;
+use Sirius\FormsRenderer\Html\ExtendedTag;
 
 trait HasErrorTrait
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
 
-use Sirius\Forms\Html\Button;
-use Sirius\Forms\WidgetFactory\Task;
-use Sirius\Forms\WidgetFactory\WorkerInterface;
+use Sirius\FormsRenderer\Html\Button;
+use Sirius\FormsRenderer\WidgetFactory\Task;
+use Sirius\FormsRenderer\WidgetFactory\WorkerInterface;
 
 class ButtonMaker implements WorkerInterface {
 
@@ -19,7 +19,7 @@ class ButtonMaker implements WorkerInterface {
         if (!$this->canHandleTask($task)) {
             return;
         }
-        /* @var $element \Sirius\Forms\Element */
+        /* @var $element \Sirius\FormsRenderer\Element */
         $element = $task->getElement();
         $button = new Button();
         $button->setAttributes($element->getAttributes());

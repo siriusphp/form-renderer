@@ -1,34 +1,34 @@
 <?php
 namespace Sirius\Forms;
 
-use Sirius\Forms\Decorator\DecoratorInterface;
-use Sirius\Forms\Form;
-use Sirius\Forms\Html\ExtendedTag;
-use Sirius\Forms\WidgetFactory\Base as BaseFactory;
-use Sirius\Forms\WidgetFactory\Worker\BootstrapStyler;
-use Sirius\Forms\WidgetFactory\Worker\ButtonMaker;
-use Sirius\Forms\WidgetFactory\Worker\ChildrenComposer;
-use Sirius\Forms\WidgetFactory\Worker\ErrorMaker;
-use Sirius\Forms\WidgetFactory\Worker\FormMaker;
-use Sirius\Forms\WidgetFactory\Worker\HintMaker;
-use Sirius\Forms\WidgetFactory\Worker\IdAttributeAttacher;
-use Sirius\Forms\WidgetFactory\Worker\InputMaker;
-use Sirius\Forms\WidgetFactory\Worker\LabelMaker;
-use Sirius\Forms\WidgetFactory\Worker\WidgetMaker;
-use Sirius\Forms\WidgetFactory\Worker\WidgetMissingAlerter;
+use Sirius\FormsRenderer\Decorator\DecoratorInterface;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\Html\ExtendedTag;
+use Sirius\FormsRenderer\WidgetFactory\Base as BaseFactory;
+use Sirius\FormsRenderer\WidgetFactory\Worker\BootstrapStyler;
+use Sirius\FormsRenderer\WidgetFactory\Worker\ButtonMaker;
+use Sirius\FormsRenderer\WidgetFactory\Worker\ChildrenComposer;
+use Sirius\FormsRenderer\WidgetFactory\Worker\ErrorMaker;
+use Sirius\FormsRenderer\WidgetFactory\Worker\FormMaker;
+use Sirius\FormsRenderer\WidgetFactory\Worker\HintMaker;
+use Sirius\FormsRenderer\WidgetFactory\Worker\IdAttributeAttacher;
+use Sirius\FormsRenderer\WidgetFactory\Worker\InputMaker;
+use Sirius\FormsRenderer\WidgetFactory\Worker\LabelMaker;
+use Sirius\FormsRenderer\WidgetFactory\Worker\WidgetMaker;
+use Sirius\FormsRenderer\WidgetFactory\Worker\WidgetMissingAlerter;
 
 class Renderer
 {
 
     /**
      *
-     * @var \Sirius\Forms\WidgetFactory\FactoryInterface
+     * @var \Sirius\FormsRenderer\WidgetFactory\FactoryInterface
      */
     protected $widgetFactory;
 
     /**
      *
-     * @var \Sirius\Forms\Util\PriorityList
+     * @var \Sirius\FormsRenderer\Util\PriorityList
      */
     protected $decoratorsList;
 
@@ -57,7 +57,7 @@ class Renderer
     /**
      *
      * @param Form $form
-     * @return Ambigous <\Sirius\Forms\WidgetFactory\false, \Sirius\Form\Renderer\Widget\WidgetInterface>
+     * @return Ambigous <\Sirius\FormsRenderer\WidgetFactory\false, \Sirius\Form\Renderer\Widget\WidgetInterface>
      */
     function render(Form $form)
     {
@@ -68,7 +68,7 @@ class Renderer
      * Returns the widget associated with the form
      *
      * @param Form $form
-     * @return NULL|\Sirius\Forms\Html\ExtendedTag
+     * @return NULL|\Sirius\FormsRenderer\Html\ExtendedTag
      */
     function getFormWidget(Form $form)
     {
@@ -82,7 +82,7 @@ class Renderer
      * @param Form $form
      * @param string $elementName
      * @throws \RuntimeException
-     * @return NULL|\Sirius\Forms\Html\ExtendedTag
+     * @return NULL|\Sirius\FormsRenderer\Html\ExtendedTag
      */
     function getElementWidget(Form $form, $elementName)
     {

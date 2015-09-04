@@ -1,8 +1,8 @@
 <?php
-namespace Sirius\Forms\WidgetFactory;
+namespace Sirius\FormsRenderer\WidgetFactory;
 
-use Sirius\Forms\Element;
-use Sirius\Forms\Form;
+use Sirius\FormsRenderer\Element;
+use Sirius\FormsRenderer\Form;
 
 interface FactoryInterface
 {
@@ -10,9 +10,9 @@ interface FactoryInterface
     /**
      * Create a widget from a form element
      *
-     * @param \Sirius\Forms\Form $form
-     * @param \Sirius\Forms\Element $element
-     * @return false|\Sirius\Forms\Html\ExtendedTag
+     * @param \Sirius\FormsRenderer\Form $form
+     * @param \Sirius\FormsRenderer\Element $element
+     * @return false|\Sirius\FormsRenderer\Html\ExtendedTag
      */
     function createWidget(Form $form, Element $element = null);
 }

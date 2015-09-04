@@ -1,10 +1,10 @@
 <?php
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
-use Sirius\Forms\Html\Div;
-use Sirius\Forms\Widget\Traits\HasErrorTrait;
-use Sirius\Forms\WidgetFactory\Task;
-use Sirius\Forms\WidgetFactory\WorkerInterface;
+use Sirius\FormsRenderer\Html\Div;
+use Sirius\FormsRenderer\Widget\Traits\HasErrorTrait;
+use Sirius\FormsRenderer\WidgetFactory\Task;
+use Sirius\FormsRenderer\WidgetFactory\WorkerInterface;
 
 /**
  * This worker attaches an HTML error tag to the element
@@ -17,7 +17,7 @@ class ErrorMaker implements WorkerInterface
         if (!$this->canHandleTask($task)) {
             return;
         }
-        /* @var $element \Sirius\Forms\Element */
+        /* @var $element \Sirius\FormsRenderer\Element */
         $element = $task->getElement();
         $errorMessages = $task->getForm()->getValidator()->getMessages($element->getName());
         if (!$errorMessages) {

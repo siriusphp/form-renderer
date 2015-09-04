@@ -1,10 +1,10 @@
 <?php
-namespace Sirius\Forms\Widget;
+namespace Sirius\FormsRenderer\Widget;
 
-use Sirius\Forms\Form\Element\Specs;
-use Sirius\Forms\Html\ExtendedTag;
-use Sirius\Forms\Widget\Traits\HasChildrenTrait;
-use Sirius\Forms\Widget\Traits\HasHintTrait;
+use Sirius\FormsRenderer\Form\Element\Specs;
+use Sirius\FormsRenderer\Html\ExtendedTag;
+use Sirius\FormsRenderer\Widget\Traits\HasChildrenTrait;
+use Sirius\FormsRenderer\Widget\Traits\HasHintTrait;
 
 class Form extends ExtendedTag
 {

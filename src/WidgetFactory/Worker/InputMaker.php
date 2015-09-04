@@ -1,20 +1,20 @@
 <?php
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
-use Sirius\Forms\Element;
-use Sirius\Forms\Element\Traits\HasContainerTrait;
-use Sirius\Forms\Form;
-use Sirius\Forms\Html\File;
-use Sirius\Forms\Html\MultiSelect;
-use Sirius\Forms\Html\Password;
-use Sirius\Forms\Html\Select;
-use Sirius\Forms\Html\Text;
-use Sirius\Forms\Html\Textarea;
-use Sirius\Forms\Widget\Input;
-use Sirius\Forms\Widget\Traits\HasInputTrait;
-use Sirius\Forms\Widget\Traits\HasLabelTrait;
-use Sirius\Forms\WidgetFactory\Task;
-use Sirius\Forms\WidgetFactory\WorkerInterface;
+use Sirius\FormsRenderer\Element;
+use Sirius\FormsRenderer\Element\Traits\HasContainerTrait;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\Html\File;
+use Sirius\FormsRenderer\Html\MultiSelect;
+use Sirius\FormsRenderer\Html\Password;
+use Sirius\FormsRenderer\Html\Select;
+use Sirius\FormsRenderer\Html\Text;
+use Sirius\FormsRenderer\Html\Textarea;
+use Sirius\FormsRenderer\Widget\Input;
+use Sirius\FormsRenderer\Widget\Traits\HasInputTrait;
+use Sirius\FormsRenderer\Widget\Traits\HasLabelTrait;
+use Sirius\FormsRenderer\WidgetFactory\Task;
+use Sirius\FormsRenderer\WidgetFactory\WorkerInterface;
 
 class InputMaker implements WorkerInterface
 {
@@ -24,7 +24,7 @@ class InputMaker implements WorkerInterface
         if (!$this->canHandleTask($task)) {
             return;
         }
-        /* @var $element \Sirius\Forms\Element */
+        /* @var $element \Sirius\FormsRenderer\Element */
         $element = $task->getElement();
         $form = $task->getForm();
         $widget = $this->createWidget($element, $form);
@@ -38,7 +38,7 @@ class InputMaker implements WorkerInterface
         return !is_object($task->getResult()) && $task->getElement();
     }
 
-    function createWidget(Element $element, Form $form) {
+    protected function createWidget(Element $element, Form $form) {
         // by default we have an input-type widget without an input
         // the input will be created later
         $widget = new Input();

@@ -1,12 +1,12 @@
 <?php
 
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
-use Sirius\Forms\Widget\Form;
-use Sirius\Forms\Widget\Input;
-use Sirius\Forms\Widget\Traits\HasChildrenTrait;
-use Sirius\Forms\WidgetFactory\Task;
-use Sirius\Forms\WidgetFactory\WorkerInterface;
+use Sirius\FormsRenderer\Widget\Form;
+use Sirius\FormsRenderer\Widget\Input;
+use Sirius\FormsRenderer\Widget\Traits\HasChildrenTrait;
+use Sirius\FormsRenderer\WidgetFactory\Task;
+use Sirius\FormsRenderer\WidgetFactory\WorkerInterface;
 
 class BootstrapStyler implements WorkerInterface {
     const CONTAINER_CLASS = 'form-group';

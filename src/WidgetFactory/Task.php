@@ -1,9 +1,9 @@
 <?php
-namespace Sirius\Forms\WidgetFactory;
+namespace Sirius\FormsRenderer\WidgetFactory;
 
-use Sirius\Forms\Element;
-use Sirius\Forms\Form;
-use Sirius\Forms\Html\ExtendedTag;
+use Sirius\FormsRenderer\Element;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\Html\ExtendedTag;
 
 class Task
 {
@@ -34,7 +34,7 @@ class Task
     /**
      * Get the widget factory associated with this task
      *
-     * @return \Sirius\Forms\WidgetFactory\FactoryInterface
+     * @return \Sirius\FormsRenderer\WidgetFactory\FactoryInterface
      */
     function getWidgetFactory()
     {
@@ -44,7 +44,7 @@ class Task
     /**
      * Return the form that is going to be handled during the execution of this task
      *
-     * @return \Sirius\Forms\Form
+     * @return \Sirius\FormsRenderer\Form
      */
     function getForm()
     {
@@ -54,7 +54,7 @@ class Task
     /**
      * Return the element that is going to be handled during the execution of this task
      *
-     * @return \Sirius\Forms\Element\AbstractElement
+     * @return \Sirius\FormsRenderer\Element\AbstractElement
      */
     function getElement()
     {

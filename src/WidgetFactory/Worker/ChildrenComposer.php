@@ -1,10 +1,10 @@
 <?php
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
 
-use Sirius\Forms\Element\Group;
-use Sirius\Forms\WidgetFactory\Task;
-use Sirius\Forms\WidgetFactory\WorkerInterface;
+use Sirius\FormsRenderer\Element\Group;
+use Sirius\FormsRenderer\WidgetFactory\Task;
+use Sirius\FormsRenderer\WidgetFactory\WorkerInterface;
 
 class ChildrenComposer implements WorkerInterface
 {
@@ -51,7 +51,7 @@ class ChildrenComposer implements WorkerInterface
 
         // add the groups' children to their group element
         foreach ($groupChildren as $name => $children) {
-            /* @var $groupWidget \Sirius\Forms\Widget\Group */
+            /* @var $groupWidget \Sirius\FormsRenderer\Widget\Group */
             $groupWidget = $childrenWidgets[$name];
             $groupWidget->setChildren($children);
         }

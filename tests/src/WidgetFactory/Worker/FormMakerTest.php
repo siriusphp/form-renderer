@@ -6,11 +6,11 @@
  * Time: 12:40 PM
  */
 
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
 
-use Sirius\Forms\Form;
-use Sirius\Forms\WidgetFactory\Task;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\WidgetFactory\Task;
 
 class FormMakerTest extends \PHPUnit_Framework_TestCase
 {
@@ -24,7 +24,7 @@ class FormMakerTest extends \PHPUnit_Framework_TestCase
     protected $worker;
 
     /**
-     * @var \Sirius\Forms\WidgetFactory\Base
+     * @var \Sirius\FormsRenderer\WidgetFactory\Base
      */
     protected $widgetFactory;
 
@@ -36,7 +36,7 @@ class FormMakerTest extends \PHPUnit_Framework_TestCase
         ));
         $this->form->setData('key', 'value');
 
-        $this->widgetFactory = \Mockery::mock('\Sirius\Forms\WidgetFactory\Base');
+        $this->widgetFactory = \Mockery::mock('\Sirius\FormsRenderer\WidgetFactory\Base');
 
         $this->worker = new FormMaker();
     }
@@ -54,7 +54,7 @@ class FormMakerTest extends \PHPUnit_Framework_TestCase
     function testFormWidgetNotCreatedIfTheTaskHasAlreadyAResult()
     {
         $task = new Task($this->widgetFactory, $this->form);
-        $firstWidget = new \Sirius\Forms\Widget\Form();
+        $firstWidget = new \Sirius\FormsRenderer\Widget\Form();
         $task->setResult($firstWidget);
         $this->worker->processTask($task);
         $widget = $task->getResult();

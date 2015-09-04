@@ -1,12 +1,12 @@
 <?php
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
 
-use Sirius\Forms\Element\Input;
-use Sirius\Forms\Form;
-use Sirius\Forms\Html\Text;
-use Sirius\Forms\WidgetFactory\Base;
-use Sirius\Forms\WidgetFactory\Task;
+use Sirius\FormsRenderer\Element\Input;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\Html\Text;
+use Sirius\FormsRenderer\WidgetFactory\Base;
+use Sirius\FormsRenderer\WidgetFactory\Task;
 
 class HintMakerTest  extends \PHPUnit_Framework_TestCase
 {
@@ -17,12 +17,12 @@ class HintMakerTest  extends \PHPUnit_Framework_TestCase
     protected $maker;
 
     /**
-     * @var \Sirius\Forms\Widget\Input
+     * @var \Sirius\FormsRenderer\Widget\Input
      */
     protected $widget;
 
     /**
-     * @var \Sirius\Forms\Element\Input
+     * @var \Sirius\FormsRenderer\Element\Input
      */
     protected $element;
 
@@ -32,7 +32,7 @@ class HintMakerTest  extends \PHPUnit_Framework_TestCase
             'hint' => 'Enter your email address where you want to receive notifications',
             'hint_attributes' => array('class' => 'help-block')
         ));
-        $this->widget = new \Sirius\Forms\Widget\Input();
+        $this->widget = new \Sirius\FormsRenderer\Widget\Input();
         $this->widget->setInput(new Text());
     }
 

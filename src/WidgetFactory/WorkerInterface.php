@@ -1,6 +1,6 @@
 <?php
 
-namespace Sirius\Forms\WidgetFactory;
+namespace Sirius\FormsRenderer\WidgetFactory;
 
 interface WorkerInterface
 {

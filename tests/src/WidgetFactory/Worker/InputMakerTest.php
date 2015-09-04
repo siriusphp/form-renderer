@@ -6,17 +6,17 @@
  * Time: 12:40 PM
  */
 
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
 
-use Sirius\Forms\Element\Input\File;
-use Sirius\Forms\Element;
-use Sirius\Forms\Element\Input\MultiSelect;
-use Sirius\Forms\Element\Input\Select;
-use Sirius\Forms\Element\Input\Text;
-use Sirius\Forms\Element\Input\Textarea;
-use Sirius\Forms\Form;
-use Sirius\Forms\WidgetFactory\Task;
+use Sirius\FormsRenderer\Element\Input\File;
+use Sirius\FormsRenderer\Element;
+use Sirius\FormsRenderer\Element\Input\MultiSelect;
+use Sirius\FormsRenderer\Element\Input\Select;
+use Sirius\FormsRenderer\Element\Input\Text;
+use Sirius\FormsRenderer\Element\Input\Textarea;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\WidgetFactory\Task;
 
 class InputMakerTest extends \PHPUnit_Framework_TestCase
 {
@@ -30,7 +30,7 @@ class InputMakerTest extends \PHPUnit_Framework_TestCase
     protected $worker;
 
     /**
-     * @var \Sirius\Forms\WidgetFactory\Base
+     * @var \Sirius\FormsRenderer\WidgetFactory\Base
      */
     protected $widgetFactory;
 
@@ -45,7 +45,7 @@ class InputMakerTest extends \PHPUnit_Framework_TestCase
         );
         $this->form->setData('key', 'value');
 
-        $this->widgetFactory = \Mockery::mock('\Sirius\Forms\WidgetFactory\Base');
+        $this->widgetFactory = \Mockery::mock('\Sirius\FormsRenderer\WidgetFactory\Base');
 
         $this->worker = new InputMaker();
     }
@@ -65,7 +65,7 @@ class InputMakerTest extends \PHPUnit_Framework_TestCase
 
         $task = new Task($this->widgetFactory, $this->form, $element);
         $this->worker->processTask($task);
-        /* @var $widget \Sirius\Forms\Widget\Input */
+        /* @var $widget \Sirius\FormsRenderer\Widget\Input */
         $widget = $task->getResult();
 
         $this->assertEquals($widget->getInput()->getAttribute('class'), $element->getAttribute('class'));
@@ -87,7 +87,7 @@ class InputMakerTest extends \PHPUnit_Framework_TestCase
 
         $task = new Task($this->widgetFactory, $this->form, $element);
         $this->worker->processTask($task);
-        /* @var $widget \Sirius\Forms\Widget\Input */
+        /* @var $widget \Sirius\FormsRenderer\Widget\Input */
         $widget = $task->getResult();
 
         $this->assertEquals($widget->getInput()->getAttribute('class'), $element->getAttribute('class'));
@@ -111,7 +111,7 @@ class InputMakerTest extends \PHPUnit_Framework_TestCase
 
         $task = new Task($this->widgetFactory, $this->form, $element);
         $this->worker->processTask($task);
-        /* @var $widget \Sirius\Forms\Widget\Input */
+        /* @var $widget \Sirius\FormsRenderer\Widget\Input */
         $widget = $task->getResult();
 
         $this->assertEquals($widget->getInput()->getAttribute('class'), $element->getAttribute('class'));
@@ -132,7 +132,7 @@ class InputMakerTest extends \PHPUnit_Framework_TestCase
 
         $task = new Task($this->widgetFactory, $this->form, $element);
         $this->worker->processTask($task);
-        /* @var $widget \Sirius\Forms\Widget\Input */
+        /* @var $widget \Sirius\FormsRenderer\Widget\Input */
         $widget = $task->getResult();
 
         $this->assertEquals($widget->getInput()->getAttribute('class'), $element->getAttribute('class'));
@@ -161,7 +161,7 @@ class InputMakerTest extends \PHPUnit_Framework_TestCase
 
         $task = new Task($this->widgetFactory, $this->form, $element);
         $this->worker->processTask($task);
-        /* @var $widget \Sirius\Forms\Widget\Input */
+        /* @var $widget \Sirius\FormsRenderer\Widget\Input */
         $widget = $task->getResult();
 
         $this->assertEquals($widget->getInput()->getAttribute('class'), $element->getAttribute('class'));
@@ -191,7 +191,7 @@ class InputMakerTest extends \PHPUnit_Framework_TestCase
 
         $task = new Task($this->widgetFactory, $this->form, $element);
         $this->worker->processTask($task);
-        /* @var $widget \Sirius\Forms\Widget\Input */
+        /* @var $widget \Sirius\FormsRenderer\Widget\Input */
         $widget = $task->getResult();
 
         $this->assertEquals($widget->getInput()->getAttribute('class'), $element->getAttribute('class'));
@@ -225,7 +225,7 @@ class InputMakerTest extends \PHPUnit_Framework_TestCase
         );
 
         $task = new Task($this->widgetFactory, $this->form, $element);
-        $firstWidget = new \Sirius\Forms\Html\Textarea();
+        $firstWidget = new \Sirius\FormsRenderer\Html\Textarea();
         $task->setResult($firstWidget);
         $this->worker->processTask($task);
         $widget = $task->getResult();

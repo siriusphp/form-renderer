@@ -1,12 +1,12 @@
 <?php
-namespace Sirius\Forms\Widget;
+namespace Sirius\FormsRenderer\Widget;
 
-use Sirius\Forms\Html\ExtendedTag;
-use Sirius\Forms\Widget\Traits\HasErrorTrait;
-use Sirius\Forms\Widget\Traits\HasHintTrait;
-use Sirius\Forms\Widget\Traits\HasInputTrait;
-use Sirius\Forms\Widget\Traits\HasLabelTrait;
-use Sirius\Forms\Widget\Traits\HasValueTrait;
+use Sirius\FormsRenderer\Html\ExtendedTag;
+use Sirius\FormsRenderer\Widget\Traits\HasErrorTrait;
+use Sirius\FormsRenderer\Widget\Traits\HasHintTrait;
+use Sirius\FormsRenderer\Widget\Traits\HasInputTrait;
+use Sirius\FormsRenderer\Widget\Traits\HasLabelTrait;
+use Sirius\FormsRenderer\Widget\Traits\HasValueTrait;
 
 class Input extends ExtendedTag
 {

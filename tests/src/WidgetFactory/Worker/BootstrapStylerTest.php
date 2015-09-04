@@ -6,13 +6,13 @@
  * Time: 9:28 AM
  */
 
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
 
-use Sirius\Forms\Element\Input\Text;
-use Sirius\Forms\Form;
-use Sirius\Forms\Widget\Input;
-use Sirius\Forms\WidgetFactory\Task;
+use Sirius\FormsRenderer\Element\Input\Text;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\Widget\Input;
+use Sirius\FormsRenderer\WidgetFactory\Task;
 use Sirius\FormsTest\Html\Div;
 
 class BootstrapStylerTest extends \PHPUnit_Framework_TestCase
@@ -27,16 +27,16 @@ class BootstrapStylerTest extends \PHPUnit_Framework_TestCase
     protected $worker;
 
     /**
-     * @var \Sirius\Forms\WidgetFactory\Base
+     * @var \Sirius\FormsRenderer\WidgetFactory\Base
      */
     protected $widgetFactory;
     /**
-     * @var \Sirius\Forms\Widget\Form
+     * @var \Sirius\FormsRenderer\Widget\Form
      */
     protected $formWidget;
 
     /**
-     * @var \Sirius\Forms\Widget\Input
+     * @var \Sirius\FormsRenderer\Widget\Input
      */
     protected $inputWidget;
 
@@ -44,10 +44,10 @@ class BootstrapStylerTest extends \PHPUnit_Framework_TestCase
     {
         $this->form = new Form();
 
-        $this->widgetFactory = \Mockery::mock('\Sirius\Forms\WidgetFactory\Base');
+        $this->widgetFactory = \Mockery::mock('\Sirius\FormsRenderer\WidgetFactory\Base');
 
         $this->worker = new BootstrapStyler();
-        $this->formWidget = new \Sirius\Forms\Widget\Form();
+        $this->formWidget = new \Sirius\FormsRenderer\Widget\Form();
         $this->inputWidget = new Input();
     }
 

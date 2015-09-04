@@ -1,10 +1,10 @@
 <?php
-namespace Sirius\Forms\WidgetFactory;
+namespace Sirius\FormsRenderer\WidgetFactory;
 
-use Sirius\Forms\Element\AbstractElement;
-use Sirius\Forms\Element;
-use Sirius\Forms\Form;
-use Sirius\Forms\Util\PriorityList;
+use Sirius\FormsRenderer\Element\AbstractElement;
+use Sirius\FormsRenderer\Element;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\Util\PriorityList;
 
 class Base implements FactoryInterface
 {
@@ -34,13 +34,13 @@ class Base implements FactoryInterface
     }
 
     /*
-     * (non-PHPdoc) @see \Sirius\Forms\WidgetFactory\FactoryInterface::createWidget()
+     * (non-PHPdoc) @see \Sirius\FormsRenderer\WidgetFactory\FactoryInterface::createWidget()
      */
     function createWidget(Form $form, Element $element = null)
     {
         $task = $this->createTask($form, $element);
         foreach ($this->workers as $worker) {
-            /* @var $worker \Sirius\Forms\WidgetFactory\WorkerInterface */
+            /* @var $worker \Sirius\FormsRenderer\WidgetFactory\WorkerInterface */
             $worker->processTask($task);
         }
         return $task->getResult();
@@ -51,7 +51,7 @@ class Base implements FactoryInterface
      *
      * @param Form $form
      * @param Element $element
-     * @return \Sirius\Forms\WidgetFactory\Task
+     * @return \Sirius\FormsRenderer\WidgetFactory\Task
      */
     protected function createTask(Form $form, Element $element = null)
     {

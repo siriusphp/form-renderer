@@ -1,5 +1,5 @@
 <?php
-namespace Sirius\Forms\Util;
+namespace Sirius\FormsRenderer\Util;
 
 class PriorityListTest extends \PHPUnit_Framework_TestCase
 {

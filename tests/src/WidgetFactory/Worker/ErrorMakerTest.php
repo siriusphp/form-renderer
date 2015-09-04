@@ -1,11 +1,11 @@
 <?php
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
 
-use Sirius\Forms\Element\Input\Text;
-use Sirius\Forms\Form;
-use Sirius\Forms\Widget\Input;
-use Sirius\Forms\WidgetFactory\Task;
+use Sirius\FormsRenderer\Element\Input\Text;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\Widget\Input;
+use Sirius\FormsRenderer\WidgetFactory\Task;
 
 class ErrorMakerTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,7 +19,7 @@ class ErrorMakerTest extends \PHPUnit_Framework_TestCase
     protected $worker;
 
     /**
-     * @var \Sirius\Forms\WidgetFactory\Base
+     * @var \Sirius\FormsRenderer\WidgetFactory\Base
      */
     protected $widgetFactory;
 
@@ -34,7 +34,7 @@ class ErrorMakerTest extends \PHPUnit_Framework_TestCase
         );
         $this->form->setData('key', 'value');
 
-        $this->widgetFactory = \Mockery::mock('\Sirius\Forms\WidgetFactory\Base');
+        $this->widgetFactory = \Mockery::mock('\Sirius\FormsRenderer\WidgetFactory\Base');
 
         $this->worker = new ErrorMaker();
     }

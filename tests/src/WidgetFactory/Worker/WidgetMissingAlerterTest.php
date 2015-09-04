@@ -1,11 +1,11 @@
 <?php
 
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
 
-use Sirius\Forms\Form;
-use Sirius\Forms\WidgetFactory\Base;
-use Sirius\Forms\WidgetFactory\Task;
+use Sirius\FormsRenderer\Form;
+use Sirius\FormsRenderer\WidgetFactory\Base;
+use Sirius\FormsRenderer\WidgetFactory\Task;
 
 class WidgetMissingAlerterTest extends \PHPUnit_Framework_TestCase
 {

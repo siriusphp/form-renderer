@@ -1,10 +1,10 @@
 <?php
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
-use Sirius\Forms\Html\Div;
-use Sirius\Forms\Widget\Traits\HasHintTrait;
-use Sirius\Forms\WidgetFactory\Task;
-use Sirius\Forms\WidgetFactory\WorkerInterface;
+use Sirius\FormsRenderer\Html\Div;
+use Sirius\FormsRenderer\Widget\Traits\HasHintTrait;
+use Sirius\FormsRenderer\WidgetFactory\Task;
+use Sirius\FormsRenderer\WidgetFactory\WorkerInterface;
 
 /**
  * This worker attaches a hint HTML tag to the form element
@@ -17,7 +17,7 @@ class HintMaker implements WorkerInterface
         if (!$this->canHandleTask($task)) {
             return;
         }
-        /* @var $element \Sirius\Forms\Element */
+        /* @var $element \Sirius\FormsRenderer\Element */
         $element = $task->getElement();
         if (!$element || !$element->getHint()) {
             return;

@@ -1,12 +1,12 @@
 <?php
-namespace Sirius\Forms\WidgetFactory\Worker;
+namespace Sirius\FormsRenderer\WidgetFactory\Worker;
 
-use Sirius\Forms\Element\Fieldset;
-use Sirius\Forms\Html\Label;
-use Sirius\Forms\Html\ExtendedTag;
-use Sirius\Forms\Widget\Traits\HasLabelTrait;
-use Sirius\Forms\WidgetFactory\Task;
-use Sirius\Forms\WidgetFactory\WorkerInterface;
+use Sirius\FormsRenderer\Element\Fieldset;
+use Sirius\FormsRenderer\Html\Label;
+use Sirius\FormsRenderer\Html\ExtendedTag;
+use Sirius\FormsRenderer\Widget\Traits\HasLabelTrait;
+use Sirius\FormsRenderer\WidgetFactory\Task;
+use Sirius\FormsRenderer\WidgetFactory\WorkerInterface;
 
 /**
  * This worker attaches a label HTML tag to the widget
@@ -19,7 +19,7 @@ class LabelMaker implements WorkerInterface
         if (!$this->canHandleTask($task)) {
             return;
         }
-        /* @var $element \Sirius\Forms\Element */
+        /* @var $element \Sirius\FormsRenderer\Element */
         $element = $task->getElement();
         if (!$element->getLabel()) {
             return;

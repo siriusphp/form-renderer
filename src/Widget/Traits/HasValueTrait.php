@@ -1,5 +1,5 @@
 <?php
-namespace Sirius\Forms\Widget\Traits;
+namespace Sirius\FormsRenderer\Widget\Traits;
 
 trait HasValueTrait
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sirius\Forms\Util;
+namespace Sirius\FormsRenderer\Util;
 
 /**
  * Class to manage an auto-sorted array
