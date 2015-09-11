@@ -17,6 +17,7 @@ class AutoId
             $this->addInputIdAttribute($tag, $renderer);
             $this->addLabelForAttribute($tag, $renderer);
         }
+        return $tag;
     }
 
     protected function getFormIdPrefix(AbstractWidget $tag, Renderer $renderer)
