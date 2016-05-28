@@ -2,6 +2,7 @@
 
 namespace Sirius\FormRenderer\Widget;
 
+use Sirius\FormRenderer\Renderer;
 use Sirius\Input\Specs;
 
 class SelectTest extends BaseTest
@@ -19,8 +20,8 @@ class SelectTest extends BaseTest
             Specs::WIDGET       => 'select',
             Specs::LABEL        => 'Gender',
             Specs::VALIDATION   => [ 'required' ],
-            Specs::FIRST_OPTION => 'select from list',
-            Specs::OPTIONS      => array( 'male' => 'Male', 'female' => 'Female' )
+            Specs::FIRST_CHOICE => 'select from list',
+            Specs::CHOICES      => array( 'male' => 'Male', 'female' => 'Female' )
         ]);
 
         $this->form->populate(array(
@@ -30,7 +31,7 @@ class SelectTest extends BaseTest
         $this->widget = new Select([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('gender')
-        ], $this->form->getValue('gender'));
+        ], $this->form->getValue('gender'), new Renderer());
     }
 
     function testInputName()

@@ -3,7 +3,7 @@
 namespace Sirius\FormRenderer\Widget;
 
 use Sirius\Input\Specs;
-use Sirius\Multiselect;
+use Sirius\FormRenderer\Renderer;
 
 class CheckboxsetTest extends BaseTest
 {
@@ -20,8 +20,8 @@ class CheckboxsetTest extends BaseTest
             Specs::WIDGET       => 'multiselect',
             Specs::LABEL        => 'Preferred foods',
             Specs::VALIDATION   => [ 'required' ],
-            Specs::FIRST_OPTION => 'select from list',
-            Specs::OPTIONS      => array( 'pizza' => 'Pizza', 'burgers' => 'Burgers', 'brocolli' => 'Brocolli' )
+            Specs::FIRST_CHOICE => 'select from list',
+            Specs::CHOICES      => array( 'pizza' => 'Pizza', 'burgers' => 'Burgers', 'brocolli' => 'Brocolli' )
         ]);
 
         $this->form->populate(array(
@@ -31,7 +31,7 @@ class CheckboxsetTest extends BaseTest
         $this->widget = new Checkboxset([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('foods')
-        ], $this->form->getValue('foods'));
+        ], $this->form->getValue('foods'), new Renderer());
     }
 
     function testInputName()

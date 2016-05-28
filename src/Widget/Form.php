@@ -8,7 +8,7 @@ class Form extends \Sirius\Html\Tag
 
     protected $tag = 'form';
 
-    function getInnerHtml()
+    public function getInnerHtml()
     {
         return implode("\n", $this->getChildInputElements());
 
@@ -16,11 +16,11 @@ class Form extends \Sirius\Html\Tag
 
     protected function getChildInputElements()
     {
-        $content = [ ];
+        $content = [];
         foreach ($this->get('_children') as $name => $props) {
             /* @var $element \Sirius\Input\Element */
-            $element   = $props['_element'];
-            $value     = $props['_form']->getValue($name);
+            $element = $props['_element'];
+            $value = $props['_form']->getValue($name);
             $content[] = $this->builder->make('widget-' . $element->getWidget(), $props, $value);
         }
 

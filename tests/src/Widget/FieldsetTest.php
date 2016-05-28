@@ -2,6 +2,7 @@
 
 namespace Sirius\FormRenderer\Widget;
 
+use Sirius\FormRenderer\Renderer;
 use Sirius\Input\InputFilter;
 use Sirius\Input\Specs;
 
@@ -53,7 +54,7 @@ class FieldsetTest extends BaseTest
         $this->widget = new Fieldset([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('address')
-        ]);
+        ], null, new Renderer());
     }
 
     function testLegendPresent()

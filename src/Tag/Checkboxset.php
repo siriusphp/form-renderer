@@ -13,11 +13,11 @@ class Checkboxset extends Radioset
     public function getInnerHtml()
     {
         $items = array();
-        $name  = $this->get('_element')->get('name');
+        $name = $this->get('_element')->get('name');
         $value = $this->getValue();
-        foreach ($this->get('_element')->get(Specs::OPTIONS) as $k => $v) {
+        foreach ($this->get('_options') as $k => $v) {
             $items[] = '<li><label>' . $this->builder->make('checkbox', [
-                    'name'  => $name . '[]',
+                    'name' => $name . '[]',
                     'value' => $k,
                 ], $value) . '</label></li>';
         }

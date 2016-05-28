@@ -2,6 +2,7 @@
 
 namespace Sirius\FormRenderer\Widget;
 
+use Sirius\FormRenderer\Renderer;
 use Sirius\Input\Specs;
 
 class TextTest extends BaseTest
@@ -28,7 +29,7 @@ class TextTest extends BaseTest
         $this->widget = new Text([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('username')
-        ], $this->form->getValue('username'));
+        ], $this->form->getValue('username'), new Renderer());
     }
 
     function testInputName()

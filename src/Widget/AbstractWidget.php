@@ -37,10 +37,10 @@ abstract class AbstractWidget extends Tag
      * @param mixed $content
      * @param Renderer $builder
      */
-    function __construct($props = null, $content = null, Renderer $builder = null)
+    public function __construct($props = null, $content = null, Renderer $builder = null)
     {
-        if ( ! $builder) {
-            $builder = new Renderer();
+        if (!$builder) {
+            throw new \InvalidArgumentException('The forms renderer widgets require a Renderer object');
         }
         parent::__construct($props, $content, $builder);
         $this->createLabel();
@@ -65,54 +65,63 @@ abstract class AbstractWidget extends Tag
         return $this->props['_form'];
     }
 
+    public function isForm()
+    {
+        return $this->getElement() === $this->getForm();
+    }
+
     /**
-     * Create the input's label
+     * Creates the input's label
      */
     protected function createLabel()
     {
         if ($this->getElement()->getLabel()) {
-            $this->label = $this->builder->make('label', $this->getElement()->getLabelAttributes(),
-                $this->getElement()->getLabel());
+            $this->label = $this->builder->make('label', $this->getElement()->getLabelAttributes(), $this->getElement()->getLabel());
         }
     }
 
     /**
-     * Create the hint tag
+     * Creates the hint tag
      */
     protected function createHint()
     {
         if ($this->getElement()->getHint()) {
-            $this->hint = $this->builder->make('hint', $this->getElement()->getHintAttributes(),
-                $this->getElement()->getHint());
+            $this->hint = $this->builder->make('hint', $this->getElement()->getHintAttributes(), $this->getElement()->getHint());
         }
     }
 
     /**
-     * Create the error tag
+     * Creates the error tag
      */
     protected function createError()
     {
         $error = $this->getForm()->getValidator()->getMessages($this->getElement()->getName());
         if ($error) {
-            $this->error = $this->builder->make('error', [ ], $error);
+            $this->error = $this->builder->make('error', [], $error);
         }
     }
 
     /**
-     * Create the input tag/widget
+     * Creates the input tag/widget
      */
     protected function createInput()
     {
-        $props       = $this->getInputProps();
-        $value       = $this->getForm()->getValue($props['name']);
+        $props = $this->getInputProps();
+        $value = $this->getForm()->getValue($props['name']);
         $this->input = $this->builder->make($this->inputTag, $props, $value);
     }
 
+    /**
+     * Returns the list of properties for the tag.
+     * Since tags prefixed with _ are not displayed it includes other data needed for rendering
+     *
+     * @return array
+     */
     protected function getInputProps()
     {
-        $props             = $this->getElement()->getAttributes();
-        $props['name']     = $this->get('_element')->get('name');
-        $props['_form']    = $this->getForm();
+        $props = (array)$this->getElement()->getAttributes();
+        $props['name'] = $this->get('_element')->get('name');
+        $props['_form'] = $this->getForm();
         $props['_element'] = $this->getElement();
 
         return $props;
@@ -120,40 +129,48 @@ abstract class AbstractWidget extends Tag
 
 
     /**
+     * Returns the HTML tag that will display the error
+     *
      * @return Error
      */
-    function getError()
+    public function getError()
     {
         return $this->error;
     }
 
     /**
+     * Returns the HTML tag that will display the hint
+     *
      * @return Hint
      */
-    function getHint()
+    public function getHint()
     {
         return $this->hint;
     }
 
     /**
+     * Returns the HTML tag that will display the input field
+     *
      * @return Tag
      */
-    function getInput()
+    public function getInput()
     {
         return $this->input;
     }
 
     /**
+     * Returns the HTML tag that will display the label
+     *
      * @return Label
      */
-    function getLabel()
+    public function getLabel()
     {
         return $this->label;
     }
 
-    function getInnerHtml()
+    public function getInnerHtml()
     {
-        return implode("\n", [ $this->error, $this->label, $this->input, $this->hint ]);
+        return implode("\n", [$this->error, $this->label, $this->input, $this->hint]);
     }
 
 }

@@ -12,9 +12,9 @@ class Select extends AbstractWidget
 
     protected function getInputProps()
     {
-        $props                  = parent::getInputProps();
-        $props['_first_option'] = $this->get('_element')->get(Specs::FIRST_OPTION);
-        $props['_options']      = $this->get('_element')->get(Specs::OPTIONS);
+        $props = parent::getInputProps();
+        $props['_first_option'] = $this->get('_element')->get(Specs::FIRST_CHOICE);
+        $props['_options'] = $this->get('_element')->get(Specs::CHOICES);
 
         return $props;
     }

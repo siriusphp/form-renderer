@@ -2,6 +2,7 @@
 
 namespace Sirius\FormRenderer\Widget;
 
+use Sirius\FormRenderer\Renderer;
 use Sirius\Input\Specs;
 
 class GroupTest extends BaseTest
@@ -35,7 +36,7 @@ class GroupTest extends BaseTest
                     '_element' => $this->form->getElement('username')
                 ]
             ]
-        ]);
+        ], null, new Renderer());
     }
 
     function testLegendPresent()

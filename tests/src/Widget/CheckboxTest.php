@@ -3,6 +3,7 @@
 namespace Sirius\FormRenderer\Widget;
 
 use Sirius\Input\Specs;
+use Sirius\FormRenderer\Renderer;
 
 class CheckboxTest extends BaseTest
 {
@@ -30,7 +31,7 @@ class CheckboxTest extends BaseTest
         $this->widget = new Checkbox([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('newsletter')
-        ], $this->form->getValue('newsletter'));
+        ], $this->form->getValue('newsletter'), new Renderer());
     }
 
     function testInputName()

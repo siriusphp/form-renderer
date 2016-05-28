@@ -2,6 +2,7 @@
 
 namespace Sirius\FormRenderer\Widget;
 
+use Sirius\FormRenderer\Renderer;
 use Sirius\Input\Specs;
 
 class PasswordTest extends BaseTest
@@ -28,7 +29,7 @@ class PasswordTest extends BaseTest
         $this->widget = new Password([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('password')
-        ], $this->form->getValue('password'));
+        ], $this->form->getValue('password'), new Renderer());
     }
 
     function testInputName()

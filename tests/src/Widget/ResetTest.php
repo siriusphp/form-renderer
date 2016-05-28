@@ -2,6 +2,7 @@
 
 namespace Sirius\FormRenderer\Widget;
 
+use Sirius\FormRenderer\Renderer;
 use Sirius\Input\Specs;
 
 class ResetTest extends BaseTest
@@ -23,7 +24,7 @@ class ResetTest extends BaseTest
         $this->widget = new Reset([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('button')
-        ], $this->form->getValue('username'));
+        ], $this->form->getValue('username'), new Renderer());
     }
 
     function testButtonName()

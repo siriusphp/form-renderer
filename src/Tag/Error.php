@@ -8,7 +8,7 @@ class Error extends Div
 
     protected $tag = 'div';
 
-    function render()
+    public function render()
     {
         $this->addClass('error');
 

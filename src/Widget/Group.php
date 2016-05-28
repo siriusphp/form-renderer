@@ -23,11 +23,11 @@ class Group extends AbstractWidget
 
     protected function getGroupChildren()
     {
-        $content = [ ];
+        $content = [];
         foreach ($this->get('_children') as $name => $props) {
             /* @var $element \Sirius\Input\Element */
-            $element   = $props['_element'];
-            $value     = $props['_form']->getValue($name);
+            $element = $props['_element'];
+            $value = $props['_form']->getValue($name);
             $content[] = $this->builder->make('widget-' . $element->getWidget(), $props, $value);
         }
 
@@ -36,7 +36,7 @@ class Group extends AbstractWidget
 
     public function getInnerHtml()
     {
-        return implode("\n", [ $this->label, $this->hint, implode("\n", $this->getGroupChildren()) ]);
+        return implode("\n", [$this->label, $this->hint, implode("\n", $this->getGroupChildren())]);
     }
 
 }

@@ -5,10 +5,10 @@ namespace Sirius\FormRenderer;
 use Sirius\FormRenderer\Tag\Label;
 use Sirius\Html\Tag;
 
-class DecoratorA extends AbstractDecorator
+class DecoratorA implements TagDecoratorInterface
 {
 
-    function __invoke(Tag $tag, Renderer $renderer)
+    public function __invoke(Tag $tag, Renderer $renderer)
     {
         $tag->before('A');
 
@@ -17,10 +17,10 @@ class DecoratorA extends AbstractDecorator
 
 }
 
-class DecoratorB extends AbstractDecorator
+class DecoratorB implements TagDecoratorInterface
 {
 
-    function __invoke(Tag $tag, Renderer $renderer)
+    public function __invoke(Tag $tag, Renderer $renderer)
     {
         $tag->before('B');
 
@@ -29,10 +29,10 @@ class DecoratorB extends AbstractDecorator
 
 }
 
-class DecoratorC extends AbstractDecorator
+class DecoratorC implements TagDecoratorInterface
 {
 
-    function __invoke(Tag $tag, Renderer $renderer)
+    public function __invoke(Tag $tag, Renderer $renderer)
     {
         $tag->before('C');
 

@@ -2,16 +2,14 @@
 
 namespace Sirius\FormRenderer\Widget;
 
-class Number extends Text
+class Textarea extends AbstractWidget
 {
 
-    protected $inputTag = 'text';
+    protected $inputTag = 'textarea';
 
     protected function getInputProps()
     {
         $props = parent::getInputProps();
-        $props['type'] = 'number';
-
         return $props;
     }
 }

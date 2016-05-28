@@ -2,6 +2,7 @@
 
 namespace Sirius\FormRenderer\Widget;
 
+use Sirius\FormRenderer\Renderer;
 use Sirius\Input\Specs;
 use Sirius\Multiselect;
 
@@ -20,8 +21,8 @@ class MultiselectTest extends BaseTest
             Specs::WIDGET       => 'multiselect',
             Specs::LABEL        => 'Preferred foods',
             Specs::VALIDATION   => [ 'required' ],
-            Specs::FIRST_OPTION => 'select from list',
-            Specs::OPTIONS      => array( 'pizza' => 'Pizza', 'burgers' => 'Burgers', 'brocolli' => 'Brocolli' )
+            Specs::FIRST_CHOICE => 'select from list',
+            Specs::CHOICES      => array( 'pizza' => 'Pizza', 'burgers' => 'Burgers', 'brocolli' => 'Brocolli' )
         ]);
 
         $this->form->populate(array(
@@ -31,7 +32,7 @@ class MultiselectTest extends BaseTest
         $this->widget = new \Sirius\FormRenderer\Widget\Multiselect([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('foods')
-        ], $this->form->getValue('foods'));
+        ], $this->form->getValue('foods'), new Renderer());
     }
 
     function testInputName()

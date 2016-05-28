@@ -2,6 +2,7 @@
 
 namespace Sirius\FormRenderer\Widget;
 
+use Sirius\FormRenderer\Renderer;
 use Sirius\Input\Specs;
 
 class NumberTest extends BaseTest
@@ -23,7 +24,7 @@ class NumberTest extends BaseTest
         $this->widget = new Number([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('age')
-        ], $this->form->getValue('age'));
+        ], $this->form->getValue('age'), new Renderer());
     }
 
     function testButtonName()

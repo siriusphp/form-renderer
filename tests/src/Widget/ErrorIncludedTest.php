@@ -29,10 +29,10 @@ class ErrorIncludedTest extends BaseTest
         $this->widget = new Text([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('username')
-        ], $this->form->getValue('username'));
+        ], $this->form->getValue('username'), new Renderer());
     }
 
-    function testInputValue()
+    function testErrorIsDisplayed()
     {
         $this->assertTrue(false !== strpos($this->widget->render(), 'is required'));
     }

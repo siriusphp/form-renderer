@@ -27,20 +27,20 @@ class Fieldset extends AbstractWidget
     protected function createChildrenTree()
     {
         $treeBuilder = new TreeBuilder($this->get('_form'), $this->get('_element'));
-        $tree        = $treeBuilder->getTree();
+        $tree = $treeBuilder->getTree();
         $this->set('_children', $tree['_children']);
     }
 
     protected function getChildInputElements()
     {
-        $content = [ ];
-        if ( ! $this->get('_children')) {
+        $content = [];
+        if (!$this->get('_children')) {
             $this->createChildrenTree();
         }
         foreach ($this->get('_children') as $name => $props) {
             /* @var $element \Sirius\Input\Element */
-            $element   = $props['_element'];
-            $value     = $props['_form']->getValue($element->get('name'));
+            $element = $props['_element'];
+            $value = $props['_form']->getValue($element->get('name'));
             $content[] = $this->builder->make('widget-' . $element->getWidget(), $props, $value);
         }
 
@@ -50,7 +50,7 @@ class Fieldset extends AbstractWidget
     public function getInnerHtml()
     {
         return implode("\n",
-            [ $this->label, $this->hint, $this->error, implode("\n", $this->getChildInputElements()) ]);
+            [$this->label, $this->hint, $this->error, implode("\n", $this->getChildInputElements())]);
     }
 
 }

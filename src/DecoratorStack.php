@@ -8,17 +8,24 @@ class DecoratorStack
 
     protected $index = PHP_INT_MAX;
 
-    protected $stack = [ ];
+    protected $stack = [];
 
-    function add(callable $decorator, $priority = 0)
+    /**
+     * Add a decorator to the stack
+     *
+     * @param callable $decorator
+     * @param int $priority
+     * @return $this
+     */
+    public function add(callable $decorator, $priority = 0)
     {
         $this->stack[] = array(
             'decorator' => $decorator,
-            'priority'  => $priority,
-            'index'     => $this->index
+            'priority' => $priority,
+            'index' => $this->index
         );
-        $this->index --;
-        uasort($this->stack, array( $this, 'compareStackItems' ));
+        $this->index--;
+        uasort($this->stack, array($this, 'compareStackItems'));
 
         return $this;
     }
@@ -26,12 +33,12 @@ class DecoratorStack
     protected function compareStackItems($a, $b)
     {
         if ($a['priority'] < $b['priority']) {
-            return - 1;
+            return -1;
         } else if ($a['priority'] > $b['priority']) {
             return 1;
         }
         if ($a['index'] < $b['index']) {
-            return - 1;
+            return -1;
         } else if ($a['index'] > $b['index']) {
             return 1;
         }
@@ -39,7 +46,14 @@ class DecoratorStack
         return 0;
     }
 
-    function apply(Tag $tag, Renderer $renderer)
+    /**
+     * Apply the decorators to a tag produced by a renderer
+     *
+     * @param Tag $tag
+     * @param Renderer $renderer
+     * @return Tag
+     */
+    public function apply(Tag $tag, Renderer $renderer)
     {
         foreach ($this->stack as $item) {
             $result = $item['decorator']($tag, $renderer);

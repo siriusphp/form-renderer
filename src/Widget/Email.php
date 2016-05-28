@@ -9,7 +9,7 @@ class Email extends Text
 
     protected function getInputProps()
     {
-        $props         = parent::getInputProps();
+        $props = parent::getInputProps();
         $props['type'] = 'email';
 
         return $props;

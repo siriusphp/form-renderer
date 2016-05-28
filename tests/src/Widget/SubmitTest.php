@@ -2,6 +2,7 @@
 
 namespace Sirius\FormRenderer\Widget;
 
+use Sirius\FormRenderer\Renderer;
 use Sirius\Input\Specs;
 
 class SubmitTest extends BaseTest
@@ -24,7 +25,7 @@ class SubmitTest extends BaseTest
         $this->widget = new Submit([
             '_form'    => $this->form,
             '_element' => $this->form->getElement('button')
-        ], $this->form->getValue('username'));
+        ], $this->form->getValue('username'), new Renderer());
     }
 
     function testButtonName()

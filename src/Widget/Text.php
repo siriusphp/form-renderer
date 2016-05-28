@@ -9,7 +9,7 @@ class Text extends AbstractWidget
 
     protected function getInputProps()
     {
-        $props         = parent::getInputProps();
+        $props = parent::getInputProps();
         $props['type'] = 'text';
 
         return $props;

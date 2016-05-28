@@ -9,9 +9,9 @@ class Multiselect extends Select
 
     protected $inputTag = 'multiselect';
 
-    function getInputProps()
+    public function getInputProps()
     {
-        $props             = parent::getInputProps();
+        $props = parent::getInputProps();
         $props['multiple'] = 'multiple';
 
         return $props;

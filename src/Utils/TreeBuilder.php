@@ -16,14 +16,14 @@ class TreeBuilder
 
     public function __construct(InputFilter $form, Element $root = null)
     {
-        if ( ! $root) {
+        if (!$root) {
             $root = $form;
         }
         $this->form = $form;
         $this->root = $root;
     }
 
-    function getTree()
+    public function getTree()
     {
         return $this->createNode($this->root);
     }
@@ -32,11 +32,10 @@ class TreeBuilder
     protected function createNode($element, $name = null)
     {
         $node = [
-            '_form'     => $this->form,
-            '_name'     => $name,
-            '_element'  => $element,
-            '_children' => (method_exists($element,
-                'getElements')) ? $this->getChildrenTree($element->getElements()) : null
+            '_form' => $this->form,
+            '_name' => $name,
+            '_element' => $element,
+            '_children' => (method_exists($element, 'getElements')) ? $this->getChildrenTree($element->getElements()) : null
         ];
 
         return $node;
@@ -44,16 +43,16 @@ class TreeBuilder
 
     protected function getChildrenTree($elements)
     {
-        $parents = [ ];
+        $parents = [];
         foreach ($elements as $name => $element) {
-            $group             = ($element === $this->root || ! $element->getGroup()) ? '____root' : $element->getGroup();
+            $group = ($element === $this->root || !$element->getGroup()) ? '____root' : $element->getGroup();
             $parents[$group][] = $this->createNode($element, $name);
         }
 
         return $this->createBranch($parents, $parents['____root']);;
     }
 
-    function createBranch(&$parents, $children)
+    protected function createBranch(&$parents, $children)
     {
         $tree = array();
         foreach ($children as $child) {
