@@ -12,11 +12,13 @@ exclude:
 
 # Base URL of the published website (no "/" at the end!)
 # You are advised to set and use this variable to write your links in the HTML layouts
-baseUrl: http://www.sirius.ro/php/sirius/validation
+baseUrl: http://www.sirius.ro/php/sirius/input
+paypal: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SGXDKNJCXFPJU
+gacode: UA-535999-18
 
-projectName: Sirius\Validation
-title: Sirius\Validation
-subTitle: Framework agnostic validation library
+projectName: Sirius\FormsRenderer
+title: Sirius\FormsRenderer
+subTitle: Library to render Sirius\Input objects as forms
 
 # The left menu bar
 menu:
@@ -39,48 +41,30 @@ menu:
                 installation:
                     text: Installation
                     relativeUrl: installation.html
-                simple_example:
-                    text: Simple example
-                    relativeUrl: simple_example.html
-                validators:
-                    text: Built-in rules
-                    relativeUrl: validation_rules.html
-                helper:
-                    text: Validation helper
-                    relativeUrl: validation_helper.html
-                validator:
-                    text: Validator object
-                    relativeUrl: validator.html
-                syntactic_sugar:
-                    text: Syntactic sugar
-                    relativeUrl: syntactic_sugar.html
+#                validators:
+#                    text: Built-in rules
+#                    relativeUrl: validation_rules.html
+#                helper:
+#                    text: Validation helper
+#                    relativeUrl: validation_helper.html
+#                validator:
+#                    text: Validator object
+#                    relativeUrl: validator.html
+#                syntactic_sugar:
+#                    text: Syntactic sugar
+#                    relativeUrl: syntactic_sugar.html
 #                value_validator:
 #                    text: Value validator
 #                    relativeUrl: value_validator.html
-        advanced:
-            name: Advanced topics
+        about_forms:
+            name: How it works
             items:
-                rule_factory:
-                    text: The rule factory
-                    relativeUrl: rule_factory.html
-                error_message:
-                    text: The error message
-                    relativeUrl: error_message.html
-                validation_rule:
-                    text: The anatomy of a validation rule
-                    relativeUrl: rule_anatomy.html
-                validation_context:
-                    text: The validation context
-                    relativeUrl: validation_context.html
-        cookbook:
-            name: Cookbook
-            items:
-                complex_validator:
-                    text: Complex validators
-                    relativeUrl: complex_validators.html
-                custome_rule:
-                    text: Custom validation rule
-                    relativeUrl: custom_rule.html
-                translate_messages:
-                    text: Translating the error messages
-                    relativeUrl: translate_messages.html
+                render_flow:
+                    text: Render flow
+                    relativeUrl: render_flow.html
+                widgets:
+                    text: Widgets
+                    relativeUrl: widgets.html
+                decorators:
+                    text: Decorators
+                    relativeUrl: decorators.html
