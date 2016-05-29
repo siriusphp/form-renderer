@@ -1,4 +1,4 @@
-# Sirius FormsRenderer
+# Sirius Form Renderer
 
 [![Source Code](http://img.shields.io/badge/source-siriusphp/form--renderer-blue.svg?style=flat-square)](https://github.com/siriusphp/form-renderer)
 [![Latest Version](https://img.shields.io/packagist/v/siriusphp/form-renderer.svg?style=flat-square)](https://github.com/siriusphp/form-renderer/releases)
@@ -6,7 +6,6 @@
 [![Build Status](https://img.shields.io/travis/siriusphp/form-renderer/master.svg?style=flat-square)](https://travis-ci.org/siriusphp/form-renderer)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/siriusphp/form-renderer.svg?style=flat-square)](https://scrutinizer-ci.com/g/siriusphp/form-renderer/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/siriusphp/form-renderer.svg?style=flat-square)](https://scrutinizer-ci.com/g/siriusphp/form-renderer)
-[![Total Downloads](https://img.shields.io/packagist/dt/siriusphp/form-renderer.svg?style=flat-square)](https://packagist.org/packages/siriusphp/form-renderer)
 
 Sirius\FormsRenderer is a library that renders [Sirius\InputFilter](http://www.sirius.ro/php/sirius/input/) objects as forms using the [Sirius\Html](http://www.sirius.ro/php/sirius/html/) library.
 
